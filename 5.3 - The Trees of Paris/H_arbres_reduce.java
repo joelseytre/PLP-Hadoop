@@ -10,7 +10,7 @@ import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.Reducer.Context;
 
 public class H_arbres_reduce extends Reducer<Text, DoubleWritable, Text,DoubleWritable>{
-	public void reduce(Text key, Iterable<Text> values, Context context)
+	public void reduce(Text key, Iterable<DoubleWritable> values, Context context)
 			throws IOException, InterruptedException{
 		double Height_max = 0; //Maximum height initializiation
 		for(DoubleWritable val: values){
