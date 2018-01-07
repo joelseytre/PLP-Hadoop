@@ -35,7 +35,8 @@ public class H_arbres_driver extends Configured implements Tool{
 	      Job job = new Job(getConf(), "NumberTypeTree");
 
 	      job.setJarByClass(H_arbres_driver.class);
-	      job.setOutputKeyClass(DoubleWritable.class);
+	      job.setOutputKeyClass(Text.class);
+				job.setOutputValueClass(DoubleWritable.class);
 	      job.setMapperClass(H_arbres_map.class);
 	      job.setReducerClass(H_arbres_reduce.class);
 	      job.setInputFormatClass(TextInputFormat.class);
