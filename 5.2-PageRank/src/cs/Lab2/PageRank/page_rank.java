@@ -32,8 +32,8 @@ public class page_rank extends Configured implements Tool{
     
 
 // config
+    public static int IT = 50;
     public static Double df = 0.85;
-    public static int IT = 10;
     public static String IN_PAfH = new String();
     public static String OUT_PATH = new String();
     
