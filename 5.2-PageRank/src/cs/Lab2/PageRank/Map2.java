@@ -23,13 +23,8 @@ public class Map2 extends Mapper<LongWritable, Text, Text, Text> {
         {	links = info[2];
         
         String[] pages = links.split(",");
-<<<<<<< HEAD
         int L= pages.length;
         String L_s=Integer.toString(L);
-=======
-        int L= pages.length
-        String L_s=Integer.toString(L)
->>>>>>> db9bb9ab0578845822778b67fd6c9bc8a483b4db
         
         for (String p : pages) { 
 

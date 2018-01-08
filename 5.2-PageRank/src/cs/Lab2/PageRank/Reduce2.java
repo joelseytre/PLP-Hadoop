@@ -20,11 +20,7 @@ public class Reduce2 extends Reducer<Text, Text, Text, Text> {
             
             if (in.startsWith("SEPARATOR")) {
 
-<<<<<<< HEAD
             	String l = in.substring("SEPARATOR".length());
-=======
-            	String l = content.substring("SEPARATOR".length());
->>>>>>> db9bb9ab0578845822778b67fd6c9bc8a483b4db
                 links += l;
             } else {
                 
