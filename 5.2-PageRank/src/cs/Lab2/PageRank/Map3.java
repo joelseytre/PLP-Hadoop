@@ -14,7 +14,11 @@ public class Map3 extends Mapper<LongWritable, Text, DoubleWritable,  Text> {
 
         String l = value.toString().split("\t")[0];
         float score = Float.parseFloat(value.toString().split("\t")[1]);
+<<<<<<< HEAD
         float PR=(-1)*score;
+=======
+        float PR=(-1)*score
+>>>>>>> db9bb9ab0578845822778b67fd6c9bc8a483b4db
         
         context.write(new DoubleWritable(PR), new Text(l));
         
