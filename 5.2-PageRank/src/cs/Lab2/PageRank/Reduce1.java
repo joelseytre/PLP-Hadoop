@@ -11,15 +11,15 @@ public class Reduce1 extends Reducer<Text, Text, Text, Text> {
     
     @Override
     public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
-        boolean f = true;        
-        String links = (1.0/ page_rank.NODES.size()) + "\t";
+        int c = 0;        
+        String l = (1.0/ page_rank.NODES.size()) + "\t";
         for (Text value : values) {
-            if (!f) 
-                links += ",";
-            links += value.toString();
-            f = false;
+            if (c>0) 
+                l += ",";
+            l += value.toString();
+            c += 1;
         }
 
-        context.write(key, new Text(links));
+        context.write(key, new Text(l));
     }
 }
