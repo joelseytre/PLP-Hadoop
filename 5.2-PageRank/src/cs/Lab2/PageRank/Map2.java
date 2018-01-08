@@ -18,15 +18,18 @@ public class Map2 extends Mapper<LongWritable, Text, Text, Text> {
         
         String links = "";
         String page =info[0];
-        String pageRank =info[1];
+        String PR =info[1];
         if (info.length == 3)
         {	links = info[2];
         
-//      String[] allPagesLinked = links.split(" ")
-        String[] allPagesLinked = links.split(",");
-        for (String otherPage : allPagesLinked) { 
-            Text pageRankWithTotalLinks = new Text(pageRank + "\t" + Integer.toString(allPagesLinked.length));
-            context.write(new Text(otherPage), pageRankWithTotalLinks); 
+        String[] pages = links.split(",");
+        int L= pages.length;
+        String L_s=Integer.toString(L);
+        
+        for (String p : pages) { 
+
+            Text PRTotLinks = new Text(PR + "\t" + L_s);
+            context.write(new Text(p), PRTotLinks); 
         }
         } 
         context.write(new Text(page), new Text("SEPARATOR"+ links));
