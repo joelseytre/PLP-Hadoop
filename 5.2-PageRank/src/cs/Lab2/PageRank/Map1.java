@@ -18,16 +18,12 @@ public class Map1 extends Mapper<LongWritable, Text, Text, Text> {
         Text in_node = new Text();
         Text out_node = new Text();
         if (value.charAt(0) != '#') {
-            String[] edge = value.toString().split("\t");
-        	String in = edge[0];
-        	String out = edge[1];
-
-        	in_node.set(in);
-        	out_node.set(out);
+            String[] in_out = value.toString().split("\t");
+        	in_node.set(in_out[0]);
+        	out_node.set(in_out[1]);
         	context.write(in_node, out_node);
-
-        	page_rank.NODES.add(in);
-        	page_rank.NODES.add(out);}
+        	page_rank.NODES.add(in_out[0]);
+        	page_rank.NODES.add(in_out[1]);}
             
         
  
