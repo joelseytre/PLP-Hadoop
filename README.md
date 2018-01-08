@@ -1,6 +1,6 @@
 # PLP-Hadoop
 MapReduce introductory coding assignment.
 
-Overleaf for report: https://www.overleaf.com/13077449byqzqvmqkppr
+Note: there is no .jar file for the TF-IDF task because the file exceeded the GitHub size limit (100Mb).
 
 R Dorent, S Joutard, J Seytre
